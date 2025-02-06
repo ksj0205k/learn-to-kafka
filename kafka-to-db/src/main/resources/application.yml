@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/learnToKafka  # DB URL (your_database 부분을 실제 DB 이름으로 변경)
+    username: root  # MariaDB 사용자명
+    password: 1234  # MariaDB 비밀번호
+    driver-class-name: org.mariadb.jdbc.Driver  # MariaDB 드라이버
+
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: update  # (옵션) `create`, `update`, `validate`, `none` 중 선택
+    show-sql: true  # (옵션) 실행되는 SQL을 콘솔에서 확인하려면 true로 설정
+
+  kafka:
+    bootstrap-servers: localhost:9092  # Kafka 브로커 주소
+    consumer:
+      group-id: color-group  # 컨슈머 그룹 ID
+      auto-offset-reset: earliest  # 컨슈머의 오프셋 초기화 방식 (earliest: 처음부터, latest: 최근부터)
+      enable-auto-commit: true  # 자동 커밋 활성화
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+server:
+  port: 8081
