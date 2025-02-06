@@ -14,3 +14,6 @@
 4. Kafka Consumer Application
    - Producer에서 보낸 메세지를 Kafka에서 구독
    - 메세지를 받아서 MariaDB에 저장
+  
+   - 
+<img width="1141" alt="스크린샷 2025-02-06 오전 11 34 58" src="https://github.com/user-attachments/assets/ceff122f-7eea-4272-b6b9-091eaace13e7" />
